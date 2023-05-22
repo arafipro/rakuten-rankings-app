@@ -1,4 +1,5 @@
 import "./globals.css";
+import Credit from "@/components/Credit";
 
 export const metadata = {
   title: "Rakuten Rankings",
@@ -12,7 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body className="font-sans antialiased text-gray-900 h-screen w-full flex flex-col justify-between text-center">
+        {children}
+        <Credit />
+      </body>
     </html>
   );
 }
