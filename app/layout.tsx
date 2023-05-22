@@ -1,4 +1,5 @@
 import "./globals.css";
+import AppBar from "@/components/AppBar";
 import Credit from "@/components/Credit";
 
 export const metadata = {
@@ -13,10 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="font-sans antialiased text-gray-900 h-screen w-full flex flex-col justify-between text-center">
+      <body className="font-sans antialiased text-gray-900 h-screen w-full flex flex-col text-center">
+        <AppBar />
         <h1>Rakuten Rankings</h1>
-        {children}
-        <Credit />
+        <div className="h-screen flex flex-col justify-between">
+          {children}
+          <Credit />
+        </div>
       </body>
     </html>
   );
