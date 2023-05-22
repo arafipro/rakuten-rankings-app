@@ -3,7 +3,7 @@ import { Router } from "next/router";
 
 async function getData(genreId: number) {
   const res = await fetch(
-    `${process.env.BASE_SERACH_URL}&genreId=${genreId}&applicationId=${process.env.APPLICATION_ID}`
+    `${process.env.SERACH_API_URL}&genreId=${genreId}&applicationId=${process.env.APPLICATION_ID}`
   );
 
   if (!res.ok) {

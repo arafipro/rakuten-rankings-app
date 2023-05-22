@@ -1,6 +1,6 @@
 async function getData(genreId: number) {
   const res = await fetch(
-    `${process.env.BASE_RANKING_URL}&genreId=${genreId}&applicationId=${process.env.APPLICATION_ID}&affiliateId=${process.env.AFFILIATE_ID}`
+    `${process.env.RANKING_API_URL}&genreId=${genreId}&applicationId=${process.env.APPLICATION_ID}&affiliateId=${process.env.AFFILIATE_ID}`
   );
 
   if (!res.ok) {

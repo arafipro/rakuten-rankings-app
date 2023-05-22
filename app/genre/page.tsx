@@ -2,7 +2,7 @@ import Link from "next/link";
 
 async function getData() {
   const res = await fetch(
-    `${process.env.BASE_SERACH_URL}&genreId=0&applicationId=${process.env.APPLICATION_ID}`
+    `${process.env.SERACH_API_URL}&genreId=0&applicationId=${process.env.APPLICATION_ID}`
   );
 
   if (!res.ok) {
