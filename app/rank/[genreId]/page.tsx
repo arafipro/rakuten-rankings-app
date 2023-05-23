@@ -29,6 +29,8 @@ export default async function Home({
             <th>商品コード</th>
             <th>商品名</th>
             <th>価格</th>
+            <th>レビュー件数</th>
+            <th>レビュー平均</th>
             <th>画像</th>
             <th>URL</th>
           </tr>
@@ -40,6 +42,8 @@ export default async function Home({
               <td>{item.itemCode}</td>
               <td>{item.itemName}</td>
               <td>{item.itemPrice}</td>
+              <td>{item.reviewCount}</td>
+              <td>{item.reviewAverage}</td>
               <td>
                 <Image
                   src={modifiedUrl(item.mediumImageUrls[0])}
