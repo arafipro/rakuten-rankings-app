@@ -5,20 +5,18 @@ async function getData(genreId: number) {
   const res = await fetch(
     `${process.env.RANKING_API_URL}&genreId=${genreId}&applicationId=${process.env.APPLICATION_ID}&affiliateId=${process.env.AFFILIATE_ID}`
   );
-
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
-
   return res.json();
 }
 
 export default async function Home({
   params,
 }: {
-  params: { genreId: number };
+  params: { id: number };
 }) {
-  const data = await getData(params.genreId);
+  const data = await getData(params.id);
   const items: Item[] = data.Items;
   return (
     <>
