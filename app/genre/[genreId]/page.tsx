@@ -26,6 +26,7 @@ export default async function Home({
         <thead>
           <tr>
             <th>ジャンルID</th>
+            <th>ランキング</th>
             <th>ジャンル階層</th>
             <th>ジャンル名</th>
           </tr>
@@ -35,6 +36,9 @@ export default async function Home({
             <tr key={child.genreId}>
               <td>
                 <Link href={`genre/${child.genreId}`}>{child.genreId}</Link>
+              </td>
+              <td>
+                <Link href={`rank/${child.genreId}`}>{child.genreId}</Link>
               </td>
               <td>{child.genreLevel}</td>
               <td>{child.genreName}</td>
