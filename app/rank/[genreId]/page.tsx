@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { modifiedUrl } from "@/utils/modifiedUrl";
+
 async function getData(genreId: number) {
   const res = await fetch(
     `${process.env.RANKING_API_URL}&genreId=${genreId}&applicationId=${process.env.APPLICATION_ID}&affiliateId=${process.env.AFFILIATE_ID}`
@@ -17,7 +20,6 @@ export default async function Home({
 }) {
   const data = await getData(params.genreId);
   const items: Item[] = data.Items;
-
   return (
     <>
       <table>
@@ -27,6 +29,7 @@ export default async function Home({
             <th>商品コード</th>
             <th>商品名</th>
             <th>価格</th>
+            <th>画像</th>
             <th>URL</th>
           </tr>
         </thead>
@@ -37,6 +40,14 @@ export default async function Home({
               <td>{item.itemCode}</td>
               <td>{item.itemName}</td>
               <td>{item.itemPrice}</td>
+              <td>
+                <Image
+                  src={modifiedUrl(item.mediumImageUrls[0])}
+                  width={300}
+                  height={300}
+                  alt="Product image"
+                />
+              </td>
               <td>{item.affiliateUrl}</td>
             </tr>
           ))}

@@ -8,6 +8,7 @@ type Item = {
   itemName: string;
   itemCode: number | string;
   itemPrice: number;
-  affiliateUrl: string;
+	affiliateUrl: string;
+	mediumImageUrls: string[]
   rank: number;
 };
