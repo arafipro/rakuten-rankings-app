@@ -5,7 +5,7 @@ import { toLocaleString } from "@/utils/stringUtils";
 
 async function getData(genreId: number) {
   const res = await fetch(
-    `${process.env.RANKING_API_URL}&genreId=${genreId}&applicationId=${process.env.APPLICATION_ID}&affiliateId=${process.env.AFFILIATE_ID}`
+    `http://localhost:3000/api/rank/${genreId}`
   );
   if (!res.ok) {
     throw new Error("Failed to fetch data");

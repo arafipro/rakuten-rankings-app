@@ -2,7 +2,7 @@ import Link from "next/link";
 
 async function getData(genreId: number) {
   const res = await fetch(
-    `${process.env.SERACH_API_URL}&genreId=${genreId}&applicationId=${process.env.APPLICATION_ID}`
+    `http://localhost:3000/api/genre/${genreId}`
   );
   if (!res.ok) {
     throw new Error("Failed to fetch data");
