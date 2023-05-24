@@ -17,8 +17,8 @@ export default async function Home({ params }: { params: { id: number } }) {
   const data = await getData(params.id);
   const items: Item[] = data.Items;
   return (
-    <>
-      <div className="grid grid-cols-3 justify-items-center">
+    <div className="mx-auto">
+      <div className="grid lg:grid-cols-2 grid-cols-1">
         {items.map((item: Item) => (
           <Link
             key={item.itemCode}
@@ -64,6 +64,6 @@ export default async function Home({ params }: { params: { id: number } }) {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 }
