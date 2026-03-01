@@ -12,6 +12,6 @@ export async function GET(
     const data = await res.json();
     return NextResponse.json(data);
   } catch (error) {
-    return new NextResponse(JSON.stringify("error"));
+    return NextResponse.json({ error: "Failed to fetch ranking", Items: [] }, { status: 500 });
   }
 }

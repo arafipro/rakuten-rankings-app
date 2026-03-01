@@ -15,7 +15,7 @@ async function getData(genreId: number) {
 
 export default async function Home({ params }: { params: { id: number } }) {
   const data = await getData(params.id);
-  const items: Item[] = data.Items;
+  const items: Item[] = data.Items || [];
   return (
     <div className="mx-auto">
       <div className="grid lg:grid-cols-2 grid-cols-1">

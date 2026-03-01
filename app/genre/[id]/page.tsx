@@ -12,7 +12,7 @@ async function getData(genreId: number) {
 
 export default async function Home({ params }: { params: { id: number } }) {
   const data = await getData(params.id);
-  const ichibaGenre: Genre[] = data.children;
+  const ichibaGenre: Genre[] = data.children || [];
   return (
     <div className="flex justify-center">
       <table className="text-gray-500 dark:text-gray-400 w-3/4">

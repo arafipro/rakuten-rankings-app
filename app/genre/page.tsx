@@ -12,7 +12,7 @@ async function getData() {
 
 export default async function Home() {
   const data = await getData();
-  const ichibaGenre: Genre[] = data.children;
+  const ichibaGenre: Genre[] = data.children || [];
   return (
     <div className="flex justify-center">
       <table className="text-gray-500 dark:text-gray-400 w-3/4">
